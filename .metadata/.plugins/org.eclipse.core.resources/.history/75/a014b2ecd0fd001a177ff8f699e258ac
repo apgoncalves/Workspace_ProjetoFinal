@@ -1,0 +1,71 @@
+package br.com.equipealfa.horasextras.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Usuario {
+
+	private int id_usuario;
+	private String nome_usuario;
+	private String email_usuario;
+	private String racf;
+	private String senha;
+	private String link_foto;
+	private int gestor;
+
+	public int getId_usuario() {
+		return id_usuario;
+	}
+
+	public void setId_usuario(int id_usuario) {
+		this.id_usuario = id_usuario;
+	}
+
+	public String getNome_usuario() {
+		return nome_usuario;
+	}
+
+	public void setNome_usuario(String nome_usuario) {
+		this.nome_usuario = nome_usuario;
+	}
+
+	public String getEmail_usuario() {
+		return email_usuario;
+	}
+
+	public void setEmail_usuario(String email_usuario) {
+		this.email_usuario = email_usuario;
+	}
+
+	public String getRacf() {
+		return racf;
+	}
+
+	public void setRacf(String racf) {
+		this.racf = racf;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getLink_foto() {
+		return link_foto;
+	}
+
+	public void setLink_foto(String link_foto) {
+		this.link_foto = link_foto;
+	}
+
+	public int getGestor() {
+		return gestor;
+	}
+
+	public void setGestor(int gestor) {
+		this.gestor = gestor;
+	}
+}

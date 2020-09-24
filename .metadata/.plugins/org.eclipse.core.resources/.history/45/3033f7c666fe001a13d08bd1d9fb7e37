@@ -1,0 +1,78 @@
+package br.com.equipealfa.horasextras.model;
+
+public class Ocorrencia {
+
+	private int num_seq;
+	private int id_usuario;
+	private int id_atividade;
+	private String descricao;
+	private String data_oc;
+	private String num_horas;
+	private int ponto_manual;
+	private int status;
+
+	public int getNum_seq() {
+		return num_seq;
+	}
+
+	public void setNum_seq(int num_seq) {
+		this.num_seq = num_seq;
+	}
+
+	public int getId_usuario() {
+		return id_usuario;
+	}
+
+	public void setId_usuario(int id_usuario) {
+		this.id_usuario = id_usuario;
+	}
+
+	public int getId_atividade() {
+		return id_atividade;
+	}
+
+	public void setId_atividade(int id_atividade) {
+		this.id_atividade = id_atividade;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getData_oc() {
+		return data_oc;
+	}
+
+	public void setData_oc(String data_oc) {
+		this.data_oc = data_oc;
+	}
+
+	public String getNum_horas() {
+		return num_horas;
+	}
+
+	public void setNum_horas(String num_horas) {
+		this.num_horas = num_horas;
+	}
+
+	public int getPonto_manual() {
+		return ponto_manual;
+	}
+
+	public void setPonto_manual(int ponto_manual) {
+		this.ponto_manual = ponto_manual;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+}
