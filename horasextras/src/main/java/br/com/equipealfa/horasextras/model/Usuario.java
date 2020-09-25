@@ -44,14 +44,14 @@ public class Usuario {
 
 	@OneToMany(mappedBy="colaborador", cascade=CascadeType.ALL)
 	@JsonIgnoreProperties("colaborador")
-	private List<Ocorrencia> ListaOcorrencias;
+	private List<Ocorrencia> listaOcorrencias;
 
 	public List<Ocorrencia> getListaOcorrencias() {
-		return ListaOcorrencias;
+		return listaOcorrencias;
 	}
 
 	public void setListaOcorrencias(List<Ocorrencia> listaOcorrencias) {
-		ListaOcorrencias = listaOcorrencias;
+		this.listaOcorrencias = listaOcorrencias;
 	}
 
 	public int getIdUsuario() {

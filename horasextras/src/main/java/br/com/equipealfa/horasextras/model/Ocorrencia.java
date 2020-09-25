@@ -1,7 +1,7 @@
 package br.com.equipealfa.horasextras.model;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,12 +23,6 @@ public class Ocorrencia {
 	@Column(name = "num_seq")
 	private int numSeq;
 
-	@Column(name = "id_usuario", insertable = false, updatable = false)
-	private int idUsuario;
-
-	@Column(name = "id_atividade", insertable = false, updatable = false)
-	private int idAtividade;
-
 	@Column(name = "descricao")
 	private String descricao;
 
@@ -36,7 +30,7 @@ public class Ocorrencia {
 	private LocalDate dataOc;
 
 	@Column(name = "num_horas")
-	private LocalTime numHoras;
+	private String numHoras;
 
 	@Column(name = "ponto_manual")
 	private int pontoManual;
@@ -45,13 +39,30 @@ public class Ocorrencia {
 	private int status;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_usuario")
-	private Usuario colaborador;
+	@JoinColumn(name="id_usuario")
+	@JsonIgnoreProperties("listaOcorrencias")
+	private Usuario   colaborador;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_atividade")
-	@JsonIgnoreProperties("listaOcorrencias")
+	@JoinColumn(name="id_atividade")
 	private Atividade atividade;
+	
+	
+	public Usuario getColaborador() {
+		return colaborador;
+	}
+
+	public void setColaborador(Usuario colaborador) {
+		this.colaborador = colaborador;
+	}
+
+	public Atividade getAtividade() {
+		return atividade;
+	}
+
+	public void setAtividade(Atividade atividade) {
+		this.atividade = atividade;
+	}
 
 	public int getNumSeq() {
 		return numSeq;
@@ -59,22 +70,6 @@ public class Ocorrencia {
 
 	public void setNumSeq(int numSeq) {
 		this.numSeq = numSeq;
-	}
-
-	public int getIdUsuario() {
-		return idUsuario;
-	}
-
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
-	}
-
-	public int getId_atividade() {
-		return idAtividade;
-	}
-
-	public void setId_atividade(int id_atividade) {
-		this.idAtividade = id_atividade;
 	}
 
 	public String getDescricao() {
@@ -93,11 +88,11 @@ public class Ocorrencia {
 		this.dataOc = dataOc;
 	}
 
-	public LocalTime getNumHoras() {
+	public String getNumHoras() {
 		return numHoras;
 	}
 
-	public void setNumHoras(LocalTime numHoras) {
+	public void setNumHoras(String numHoras) {
 		this.numHoras = numHoras;
 	}
 
